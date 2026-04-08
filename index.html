@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- I. TỐI ƯU SEO CƠ BẢN -->
+    <title>SolarPro - Thi Công Lắp Đặt Điện Năng Lượng Mặt Trời Uy Tín</title>
+    <meta name="description" content="SolarPro chuyên tư vấn, thiết kế và thi công hệ thống điện năng lượng mặt trời áp mái cho hộ gia đình và doanh nghiệp. Cam kết tiết kiệm 90% chi phí điện năng.">
+    <meta name="keywords" content="điện mặt trời, điện năng lượng mặt trời, lắp đặt điện mặt trời, điện mặt trời áp mái, thi công điện mặt trời, SolarPro">
+    <meta name="author" content="SolarPro">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://solarpro.vn/">
+
+    <!-- II. TỐI ƯU CHIA SẺ MẠNG XÃ HỘI (OPEN GRAPH) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solarpro.vn/">
+    <meta property="og:title" content="SolarPro - Giải Pháp Năng Lượng Sạch Toàn Diện">
+    <meta property="og:description" content="Thi công hệ thống điện mặt trời uy tín. Tiết kiệm đến 90% hóa đơn tiền điện cho gia đình và doanh nghiệp.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509391366360-feaffa44d51b?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- CẤU TRÚC DỮ LIỆU LOCAL BUSINESS (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SolarPro",
+      "image": "https://images.unsplash.com/photo-1509391366360-feaffa44d51b?auto=format&fit=crop&q=80&w=1200",
+      "@id": "https://solarpro.vn/",
+      "url": "https://solarpro.vn/",
+      "telephone": "0900123456",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Khu Công Nghệ Cao",
+        "addressLocality": "TP. Thủ Đức",
+        "addressRegion": "TP.HCM",
+        "addressCountry": "VN"
+      },
+      "description": "Chuyên thi công lắp đặt hệ thống điện năng lượng mặt trời uy tín tại Việt Nam.",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Thư viện giao diện -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* Hiệu ứng tỏa sóng cho nút gọi */
+        .ring-animation { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Hiệu ứng chuyển trang Đa trang ảo */
+        .page-section { display: none; }
+        .page-section.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* Ẩn thanh cuộn cho slider dự án nhưng vẫn cho phép vuốt trên điện thoại */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- HEADER / ĐIỀU HƯỚNG -->
+    <header>
+        <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-20 items-center">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-2 cursor-pointer" onclick="navigate('home')">
+                        <i data-lucide="sun" class="text-yellow-500 w-8 h-8"></i>
+                        <span class="text-2xl font-bold text-green-700 tracking-tight">SOLAR<span class="text-yellow-500">PRO</span></span>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-6 lg:space-x-8 font-medium items-center">
+                        <a href="javascript:void(0)" onclick="navigate('home')" class="hover:text-green-600 transition" data-i18n="nav_home">Trang chủ</a>
+                        <a href="javascript:void(0)" onclick="navigate('about')" class="hover:text-green-600 transition" data-i18n="nav_about">Giới thiệu</a>
+                        <a href="javascript:void(0)" onclick="navigate('projects')" class="hover:text-green-600 transition" data-i18n="nav_projects">Dự án</a>
+                        <a href="javascript:void(0)" onclick="navigate('pricing')" class="hover:text-green-600 transition" data-i18n="nav_pricing">Báo giá</a>
+                        <a href="javascript:void(0)" onclick="navigate('careers')" class="hover:text-green-600 transition" data-i18n="nav_careers">Tuyển dụng</a>
+                        
+                        <!-- Bộ chuyển đổi ngôn ngữ -->
+                        <div class="flex items-center gap-2 bg-gray-100 px-3 py-1 rounded-full border">
+                            <button onclick="setLanguage('vi')" id="btn-vi" class="font-bold text-green-700">VN</button>
+                            <span class="text-gray-300">|</span>
+                            <button onclick="setLanguage('en')" id="btn-en" class="text-gray-500 hover:text-green-700">EN</button>
+                        </div>
+
+                        <a href="javascript:void(0)" onclick="navigate('home', 'contact')" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition" data-i18n="nav_contact">Liên hệ ngay</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center gap-4">
+                        <div class="flex items-center gap-2 bg-gray-100 px-2 py-1 rounded-full text-sm">
+                            <button onclick="setLanguage('vi')" class="font-bold text-green-700">VN</button>
+                            <button onclick="setLanguage('en')" class="text-gray-500">EN</button>
+                        </div>
+                        <button id="menu-btn" class="p-2" aria-label="Mở menu"><i data-lucide="menu"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-4 shadow-lg">
+                <a href="javascript:void(0)" onclick="navigate('home')" class="block font-medium" data-i18n="nav_home">Trang chủ</a>
+                <a href="javascript:void(0)" onclick="navigate('about')" class="block font-medium" data-i18n="nav_about">Giới thiệu</a>
+                <a href="javascript:void(0)" onclick="navigate('projects')" class="block font-medium" data-i18n="nav_projects">Dự án</a>
+                <a href="javascript:void(0)" onclick="navigate('pricing')" class="block font-medium" data-i18n="nav_pricing">Báo giá</a>
+                <a href="javascript:void(0)" onclick="navigate('careers')" class="block font-medium" data-i18n="nav_careers">Tuyển dụng</a>
+                <a href="javascript:void(0)" onclick="navigate('home', 'contact')" class="block text-green-600 font-bold" data-i18n="nav_contact">Liên hệ ngay</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTAINER CHỨA CÁC TRANG (ROUTER ẢO) -->
+    <main id="app-container" class="pt-20">
+
+        <!-- ============================================== -->
+        <!-- TRANG 1: TRANG CHỦ (HOME PAGE)                 -->
+        <!-- ============================================== -->
+        <div id="page-home" class="page-section active">
+            <!-- HERO SECTION VỚI SLIDER -->
+            <section class="relative h-[90vh] flex items-center justify-center text-center text-white -mt-20 pt-20 overflow-hidden bg-gray-900">
+                
+                <!-- Slider Hình ảnh -->
+                <div id="hero-slider" class="absolute inset-0 z-0 flex transition-transform duration-1000 ease-in-out w-full h-full">
+                    <!-- Ảnh 1 -->
+                    <div class="min-w-full h-full relative">
+                        <div class="absolute inset-0 bg-black/60 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1509391366360-feaffa44d51b?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Slider 1">
+                    </div>
+                    <!-- Ảnh 2 -->
+                    <div class="min-w-full h-full relative">
+                        <div class="absolute inset-0 bg-black/60 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Slider 2">
+                    </div>
+                    <!-- Ảnh 3 -->
+                    <div class="min-w-full h-full relative">
+                        <div class="absolute inset-0 bg-black/60 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Slider 3">
+                    </div>
+                </div>
+
+                <div class="max-w-4xl px-4 relative z-10">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6" data-i18n="hero_title">Thi Công Lắp Đặt Điện Năng Lượng Mặt Trời Toàn Diện</h1>
+                    <p class="text-xl mb-8 text-gray-200 italic" data-i18n="hero_sub">Tiết kiệm chi phí điện năng lên đến 90% và bảo vệ môi trường bền vững cho doanh nghiệp của anh.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="javascript:void(0)" onclick="navigate('home', 'calculator')" class="bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition" data-i18n="btn_calc">Tính Toán Hoàn Vốn</a>
+                        <a href="javascript:void(0)" onclick="navigate('pricing')" class="border-2 border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-gray-900 transition" data-i18n="btn_price">Xem Bảng Giá</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- THÔNG SỐ ẤN TƯỢNG -->
+            <section class="py-12 bg-green-700 text-white relative z-20">
+                <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold mb-2">500+</div>
+                        <div class="text-green-100 text-sm" data-i18n="stat_1">Dự án hoàn thành</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">15MWp</div>
+                        <div class="text-green-100 text-sm" data-i18n="stat_2">Tổng công suất lắp đặt</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">10+</div>
+                        <div class="text-green-100 text-sm" data-i18n="stat_3">Năm kinh nghiệm</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2">99%</div>
+                        <div class="text-green-100 text-sm" data-i18n="stat_4">Khách hàng hài lòng</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MÁY TÍNH DỰ TOÁN CHI PHÍ & HOÀN VỐN -->
+            <section id="calculator" class="py-24 bg-green-50 border-y border-green-100">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4 uppercase" data-i18n="calc_title">Dự Toán Chi Phí & Hoàn Vốn</h2>
+                        <div class="w-20 h-1 bg-green-600 mx-auto mb-4"></div>
+                        <p class="text-gray-600 italic">Anh/Chị chỉ cần kéo thanh trượt bên dưới, hệ thống sẽ tự động tính toán giải pháp phù hợp nhất.</p>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-2 max-w-5xl mx-auto border border-gray-100">
+                        <!-- Khu vực Trái: Kéo thanh trượt -->
+                        <div class="p-8 lg:p-12">
+                            <h3 class="text-xl font-bold mb-6 text-gray-800">Tiền điện trung bình hàng tháng:</h3>
+                            <div class="mb-10">
+                                <div class="text-4xl font-bold text-green-600 mb-6" id="display-bill">3.000.000 VNĐ</div>
+                                <input type="range" id="bill-slider" min="1000000" max="50000000" step="500000" value="3000000" class="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-600 outline-none">
+                                <div class="flex justify-between text-sm text-gray-500 mt-3 font-medium">
+                                    <span>1 Triệu</span>
+                                    <span>50 Triệu+</span>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-100 flex items-start gap-4">
+                                <i data-lucide="info" class="text-blue-500 w-6 h-6 flex-shrink-0 mt-0.5"></i>
+                                <p class="text-sm text-blue-800 leading-relaxed">
+                                    Công thức tính dựa trên mức giá điện trung bình hiện tại và suất đầu tư tiêu chuẩn khoảng <b class="font-bold">14 triệu VNĐ/1 kWp</b>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Khu vực Phải: Kết quả tính toán -->
+                        <div class="p-8 lg:p-12 bg-green-700 text-white flex flex-col justify-center">
+                            <h3 class="text-xl font-bold mb-8 text-green-100 border-b border-green-600 pb-4">Cấu Hình Đề Xuất Tối Ưu</h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-green-200 text-sm mb-1 uppercase tracking-wider font-semibold">Công suất hệ thống</p>
+                                    <div class="text-4xl font-bold flex items-end gap-2">
+                                        <span id="result-capacity">10</span> <span class="text-2xl font-normal text-green-200">kWp</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <p class="text-green-200 text-sm mb-1 uppercase tracking-wider font-semibold">Chi phí đầu tư ước tính</p>
+                                    <div class="text-4xl font-bold text-yellow-400 flex items-end gap-2">
+                                        <span id="result-cost">140.000.000</span> <span class="text-2xl font-normal text-yellow-200">VNĐ</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4 pt-6 mt-6 border-t border-green-600">
+                                    <div>
+                                        <p class="text-green-200 text-xs mb-1 uppercase tracking-wider">Tiết kiệm mỗi tháng</p>
+                                        <div class="text-xl font-bold text-white"><span id="result-savings">2.700.000</span> đ</div>
+                                    </div>
+                                    <div>
+                                        <p class="text-green-200 text-xs mb-1 uppercase tracking-wider">Thời gian hoàn vốn</p>
+                                        <div class="text-xl font-bold text-white"><span id="result-payback">4.3</span> năm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TRANG 2: GIỚI THIỆU (ABOUT PAGE)               -->
+        <!-- ============================================== -->
+        <div id="page-about" class="page-section bg-white min-h-screen">
+            <div class="bg-green-700 py-16">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold text-white mb-4" data-i18n="page_about_title">Về SolarPro</h1>
+                    <p class="text-green-100 text-lg" data-i18n="page_about_sub">Kiến tạo tương lai xanh bằng giải pháp năng lượng bền vững.</p>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-900" data-i18n="about_story_title">Câu chuyện của chúng tôi</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed" data-i18n="about_story_1">Được thành lập từ năm 2016, SolarPro bắt đầu với sứ mệnh mang điện mặt trời đến từng mái nhà Việt Nam. Trải qua hơn một thập kỷ, chúng tôi tự hào là đơn vị tiên phong trong lĩnh vực tư vấn, thiết kế và thi công hệ thống năng lượng tái tạo.</p>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="about_story_2">Với đội ngũ kỹ sư giàu kinh nghiệm và đối tác chiến lược là các thương hiệu hàng đầu thế giới, SolarPro cam kết mang lại hiệu quả đầu tư cao nhất và an toàn tuyệt đối cho khách hàng.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=800" alt="Đội ngũ kỹ sư SolarPro" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+
+            <div class="bg-gray-50 py-16">
+                <div class="max-w-7xl mx-auto px-4">
+                    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900" data-i18n="about_values_title">Giá trị cốt lõi</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-bold mb-2" data-i18n="val_1_title">Chất lượng</h3>
+                            <p class="text-gray-600" data-i18n="val_1_desc">Cam kết vật tư chính hãng, thi công đúng chuẩn quốc tế.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto mb-4"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-bold mb-2" data-i18n="val_2_title">Tận tâm</h3>
+                            <p class="text-gray-600" data-i18n="val_2_desc">Đồng hành cùng khách hàng suốt vòng đời dự án (25 năm).</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto mb-4"><i data-lucide="leaf" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-bold mb-2" data-i18n="val_3_title">Bền vững</h3>
+                            <p class="text-gray-600" data-i18n="val_3_desc">Phát triển kinh doanh đi đôi với bảo vệ môi trường.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TRANG 3: DỰ ÁN CHI TIẾT (PROJECTS PAGE)        -->
+        <!-- ============================================== -->
+        <div id="page-projects" class="page-section bg-gray-50 min-h-screen">
+            <div class="bg-green-700 py-16">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold text-white mb-4" data-i18n="page_projects_title">Hồ Sơ Năng Lực & Dự Án</h1>
+                    <p class="text-green-100 text-lg">Khám phá hơn 500+ dự án chúng tôi đã thực hiện trên toàn quốc.</p>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <!-- Vùng chứa Slider Dự án -->
+                <div class="overflow-hidden relative -mx-4 px-4">
+                    <div id="projects-slider-track" class="flex transition-transform duration-1000 ease-in-out w-full">
+                        
+                        <!-- Dự án 1 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800" class="w-full h-56 object-cover" alt="Dự án nhà máy" loading="lazy">
+                                <div class="p-6">
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded mb-3 inline-block">Công nghiệp</span>
+                                    <h3 class="text-xl font-bold mb-2">Nhà máy May Mặc ABC</h3>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                                        <li><strong>Công suất:</strong> 500 kWp</li>
+                                        <li><strong>Inverter:</strong> SMA (Đức)</li>
+                                        <li><strong>Tấm pin:</strong> Canadian Solar 550W</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dự án 2 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=800" class="w-full h-56 object-cover" alt="Dự án biệt thự" loading="lazy">
+                                <div class="p-6">
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mb-3 inline-block">Dân dụng</span>
+                                    <h3 class="text-xl font-bold mb-2">Biệt thự Vinhome Green</h3>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                                        <li><strong>Công suất:</strong> 15 kWp (Có lưu trữ)</li>
+                                        <li><strong>Inverter:</strong> Huawei Hybrid</li>
+                                        <li><strong>Pin lưu trữ:</strong> Lithium 10kWh</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dự án 3 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                                <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=800" class="w-full h-56 object-cover" alt="Dự án trang trại" loading="lazy">
+                                <div class="p-6">
+                                    <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded mb-3 inline-block">Nông nghiệp</span>
+                                    <h3 class="text-xl font-bold mb-2">Trang trại Bò Sữa Mộc Châu</h3>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                                        <li><strong>Công suất:</strong> 1 MWp</li>
+                                        <li><strong>Tiến độ thi công:</strong> 45 ngày</li>
+                                        <li><strong>Tiết kiệm:</strong> ~200 triệu/tháng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dự án 4 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                                <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800" class="w-full h-56 object-cover" alt="Dự án bệnh viện" loading="lazy">
+                                <div class="p-6">
+                                    <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded mb-3 inline-block">Y Tế</span>
+                                    <h3 class="text-xl font-bold mb-2">Bệnh viện Đa Khoa Quốc Tế</h3>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                                        <li><strong>Công suất:</strong> 250 kWp</li>
+                                        <li><strong>Inverter:</strong> Sungrow</li>
+                                        <li><strong>Tấm pin:</strong> Jinko Solar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dự án 5 -->
+                        <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 h-full">
+                                <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800" class="w-full h-56 object-cover" alt="Dự án trường học" loading="lazy">
+                                <div class="p-6">
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded mb-3 inline-block">Giáo Dục</span>
+                                    <h3 class="text-xl font-bold mb-2">Trường Phổ Thông Liên Cấp</h3>
+                                    <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                                        <li><strong>Công suất:</strong> 100 kWp</li>
+                                        <li><strong>Inverter:</strong> Solis</li>
+                                        <li><strong>Mô hình:</strong> Năng lượng xanh</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="text-center mt-12">
+                        <button onclick="navigate('home', 'contact')" class="inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition shadow-md">Tư Vấn Dự Án Tương Tự &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TRANG 4: BÁO GIÁ (PRICING PAGE)                -->
+        <!-- ============================================== -->
+        <div id="page-pricing" class="page-section bg-white min-h-screen">
+            <div class="bg-green-700 py-16">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold text-white mb-4" data-i18n="page_pricing_title">Bảng Giá Lắp Đặt Tiêu Chuẩn</h1>
+                    <p class="text-green-100 text-lg">Giải pháp tối ưu ngân sách - Vật tư chính hãng 100%.</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Gói Cơ Bản -->
+                    <div class="border rounded-2xl p-8 shadow-sm hover:shadow-xl transition relative">
+                        <h3 class="text-2xl font-bold mb-2">Gói Hộ Gia Đình</h3>
+                        <p class="text-gray-500 mb-6">Hệ thống hòa lưới 3kWp - 5kWp</p>
+                        <div class="text-4xl font-bold text-green-600 mb-6">Từ 40Tr <span class="text-lg text-gray-400 font-normal">/hệ thống</span></div>
+                        <ul class="space-y-4 mb-8 text-gray-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Giảm 1-2 triệu tiền điện/tháng</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Pin Jinko/Canadian cao cấp</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Bảo hành thiết bị 12 năm</li>
+                        </ul>
+                        <button onclick="navigate('home', 'contact')" class="w-full border-2 border-green-600 text-green-600 font-bold py-3 rounded-lg hover:bg-green-600 hover:text-white transition">Nhận Báo Giá Chi Tiết</button>
+                    </div>
+
+                    <!-- Gói Cao Cấp -->
+                    <div class="border-2 border-green-500 rounded-2xl p-8 shadow-xl relative transform md:-translate-y-4 bg-green-50">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-white font-bold px-4 py-1 rounded-full text-sm">BÁN CHẠY NHẤT</div>
+                        <h3 class="text-2xl font-bold mb-2">Gói Doanh Nghiệp Nhỏ</h3>
+                        <p class="text-gray-500 mb-6">Hệ thống hòa lưới 10kWp - 20kWp</p>
+                        <div class="text-4xl font-bold text-green-600 mb-6">Từ 130Tr <span class="text-lg text-gray-400 font-normal">/hệ thống</span></div>
+                        <ul class="space-y-4 mb-8 text-gray-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Phù hợp xưởng nhỏ, nhà hàng</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Hoàn vốn cực nhanh 3-4 năm</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Miễn phí vệ sinh 2 năm đầu</li>
+                        </ul>
+                        <button onclick="navigate('home', 'contact')" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition shadow-lg">Khảo Sát Tận Nơi</button>
+                    </div>
+
+                    <!-- Gói Công Nghiệp -->
+                    <div class="border rounded-2xl p-8 shadow-sm hover:shadow-xl transition relative">
+                        <h3 class="text-2xl font-bold mb-2">Gói Nhà Máy / KCN</h3>
+                        <p class="text-gray-500 mb-6">Hệ thống từ 100kWp trở lên</p>
+                        <div class="text-4xl font-bold text-green-600 mb-6">Liên Hệ <span class="text-lg text-gray-400 font-normal">/Dự toán</span></div>
+                        <ul class="space-y-4 mb-8 text-gray-700">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Thiết kế chuyên biệt theo mái</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Đạt chuẩn PCCC, giấy phép điện lực</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i> Hỗ trợ vay vốn ngân hàng xanh</li>
+                        </ul>
+                        <button onclick="navigate('home', 'contact')" class="w-full border-2 border-green-600 text-green-600 font-bold py-3 rounded-lg hover:bg-green-600 hover:text-white transition">Gặp Kỹ Sư Trưởng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TRANG 5: TUYỂN DỤNG (CAREERS PAGE)            -->
+        <!-- ============================================== -->
+        <div id="page-careers" class="page-section bg-gray-50 min-h-screen">
+            <div class="bg-green-700 py-16">
+                <div class="max-w-7xl mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold text-white mb-4" data-i18n="page_careers_title">Gia Nhập Đội Ngũ SolarPro</h1>
+                    <p class="text-green-100 text-lg">Cùng chúng tôi phủ xanh mái nhà Việt.</p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 py-16">
+                <div class="space-y-6">
+                    <!-- Job 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Kỹ thuật</span>
+                            <h3 class="text-xl font-bold mb-2">Kỹ Sư Thiết Kế Điện Mặt Trời</h3>
+                            <p class="text-gray-600 text-sm mb-2"><i data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> TP.HCM | Mức lương: 15 - 25 Triệu</p>
+                            <p class="text-gray-500 text-sm">Yêu cầu: Thành thạo AutoCAD, PVSyst. Kinh nghiệm 1 năm.</p>
+                        </div>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded font-bold hover:bg-green-700 whitespace-nowrap">Nộp CV Ngay</button>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded mb-2 inline-block">Kinh doanh</span>
+                            <h3 class="text-xl font-bold mb-2">Chuyên Viên Phát Triển Dự Án (Sale B2B)</h3>
+                            <p class="text-gray-600 text-sm mb-2"><i data-lucide="map-pin" class="inline w-4 h-4 mr-1"></i> Hà Nội & TP.HCM | Mức lương: Lương cứng + Hoa hồng (Up to 50Tr)</p>
+                            <p class="text-gray-500 text-sm">Yêu cầu: Có kỹ năng giao tiếp tốt, đam mê lĩnh vực năng lượng tái tạo.</p>
+                        </div>
+                        <button class="bg-green-600 text-white px-6 py-2 rounded font-bold hover:bg-green-700 whitespace-nowrap">Nộp CV Ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIÊN HỆ DÙNG CHUNG (GIM Ở ĐÁY CỦA APP-CONTAINER) -->
+        <section id="contact" class="py-24 bg-white border-t">
+            <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6" data-i18n="contact_title">NHẬN BÁO GIÁ ĐIỆN MẶT TRỜI</h2>
+                    <p class="text-gray-600 mb-8 italic">Anh vui lòng để lại thông tin, đội ngũ kỹ sư của em sẽ tư vấn và khảo sát tận nơi hoàn toàn miễn phí.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i data-lucide="phone"></i></div>
+                            <div><p class="font-bold">Hotline 24/7</p><p class="text-gray-600">0900.XXX.XXX (Jarvis Solar)</p></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i data-lucide="mail"></i></div>
+                            <div><p class="font-bold">Email</p><p class="text-gray-600">contact@solarpro.vn</p></div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i data-lucide="map-pin"></i></div>
+                            <div><p class="font-bold">Văn Phòng</p><p class="text-gray-600">Khu Công Nghệ Cao, TP. Thủ Đức, TP.HCM</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <form id="contactForm" action="https://formspree.io/f/MÃ_CỦA_ANH" method="POST" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" name="HoTen" placeholder="Họ và tên của anh" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-green-500 outline-none" required>
+                            <input type="tel" name="SoDienThoai" placeholder="Số điện thoại" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-green-500 outline-none" required>
+                        </div>
+                        <select name="DichVu" aria-label="Chọn dịch vụ quan tâm" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-green-500 outline-none">
+                            <option>Anh quan tâm đến giải pháp nào?</option>
+                            <option>Điện mặt trời gia đình</option>
+                            <option>Điện mặt trời doanh nghiệp</option>
+                            <option>Dịch vụ vệ sinh / Bảo trì</option>
+                        </select>
+                        <textarea name="NoiDung" placeholder="Nội dung cần tư vấn" rows="4" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-green-500 outline-none"></textarea>
+                        <button type="submit" class="w-full bg-green-600 text-white font-bold py-4 rounded-lg hover:bg-green-700 transition shadow-lg" data-i18n="btn_submit">Gửi Yêu Cầu Tư Vấn</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CHÂN TRANG (FOOTER MẠNG XÃ HỘI) -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 border-b border-gray-800 pb-12 grid md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-lucide="sun" class="text-yellow-500 w-6 h-6"></i>
+                    <span class="text-xl font-bold text-white uppercase tracking-wider">SOLAR<span class="text-yellow-500">PRO</span></span>
+                </div>
+                <p class="max-w-md">Công ty hàng đầu trong lĩnh vực tư vấn, thiết kế và thi công hệ thống điện năng lượng mặt trời. Cam kết chất lượng và hiệu quả trọn đời.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase">Liên kết</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-white transition">Chính sách bảo hành</a></li>
+                    <li><a href="#" class="hover:text-white transition">Kiến thức năng lượng</a></li>
+                    <li><a href="#" class="hover:text-white transition">Hồ sơ năng lực</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase">Mạng xã hội</h4>
+                <div class="flex gap-4">
+                    <a href="https://facebook.com/trang_cua_anh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i data-lucide="facebook" class="w-5 h-5 text-white"></i></a>
+                    <a href="https://youtube.com/kenh_cua_anh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition"><i data-lucide="youtube" class="w-5 h-5 text-white"></i></a>
+                    <a href="https://tiktok.com/@kenh_cua_anh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-black transition"><svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 pt-8 text-center text-sm">
+            &copy; 2026 SolarPro. Bản quyền thuộc về Jarvis Team.
+        </div>
+    </footer>
+
+    <!-- CỤM NÚT LIÊN HỆ NỔI (CHATBOX & ZALO) -->
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-[100] items-end">
+        <a href="https://m.me/TEN_PAGE_FACEBOOK_CUA_ANH" target="_blank" rel="noopener noreferrer" aria-label="Chat Messenger" class="w-14 h-14 bg-[#0084FF] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform duration-300 relative group">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <span class="absolute right-16 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat Messenger</span>
+        </a>
+
+        <a href="https://zalo.me/0900XXXXXX" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo" class="w-14 h-14 bg-[#0068FF] rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform duration-300 relative group">
+            <span class="font-bold text-sm">Zalo</span>
+            <span class="absolute right-16 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat Zalo ngay</span>
+        </a>
+        
+        <a href="tel:0900XXXXXX" aria-label="Gọi Hotline" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-xl ring-animation hover:scale-110 transition-transform duration-300 relative group">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+            <span class="absolute right-16 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Gọi Hotline</span>
+        </a>
+    </div>
+
+    <!-- MÃ NHÚNG CHATBOX TRỰC TIẾP (TÙY CHỌN TAWK.TO) -->
+    <script type="text/javascript">
+        // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        // (function(){
+        // var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        // s1.async=true;
+        // s1.src='https://embed.tawk.to/MÃ_ID_CỦA_ANH/default';
+        // s1.charset='UTF-8';
+        // s1.setAttribute('crossorigin','*');
+        // s0.parentNode.insertBefore(s1,s0);
+        // })();
+    </script>
+
+    <!-- JAVASCRIPT XỬ LÝ TOÀN BỘ WEBSITE -->
+    <script>
+        // 1. Khởi tạo Icon
+        lucide.createIcons();
+
+        // 2. Từ điển Đa Ngôn Ngữ (I18N)
+        const translations = {
+            vi: {
+                nav_home: "Trang chủ",
+                nav_about: "Giới thiệu",
+                nav_projects: "Dự án",
+                nav_pricing: "Báo giá",
+                nav_careers: "Tuyển dụng",
+                nav_contact: "Liên hệ ngay",
+                hero_title: "Thi Công Lắp Đặt Điện Năng Lượng Mặt Trời Toàn Diện",
+                hero_sub: "Tiết kiệm chi phí điện năng lên đến 90% và bảo vệ môi trường bền vững cho doanh nghiệp của anh.",
+                btn_calc: "Tính Toán Hoàn Vốn",
+                btn_price: "Xem Bảng Giá",
+                stat_1: "Dự án hoàn thành",
+                stat_2: "Tổng công suất lắp đặt",
+                stat_3: "Năm kinh nghiệm",
+                stat_4: "Khách hàng hài lòng",
+                calc_title: "Dự Toán Chi Phí & Hoàn Vốn",
+                page_projects_title: "Hồ Sơ Năng Lực & Dự Án",
+                page_pricing_title: "Bảng Giá Lắp Đặt Tiêu Chuẩn",
+                page_careers_title: "Gia Nhập Đội Ngũ SolarPro",
+                contact_title: "NHẬN BÁO GIÁ ĐIỆN MẶT TRỜI",
+                btn_submit: "Gửi Yêu Cầu Tư Vấn",
+                page_about_title: "Về SolarPro",
+                page_about_sub: "Kiến tạo tương lai xanh bằng giải pháp năng lượng bền vững.",
+                about_story_title: "Câu chuyện của chúng tôi",
+                about_story_1: "Được thành lập từ năm 2016, SolarPro bắt đầu với sứ mệnh mang điện mặt trời đến từng mái nhà Việt Nam. Trải qua hơn một thập kỷ, chúng tôi tự hào là đơn vị tiên phong trong lĩnh vực tư vấn, thiết kế và thi công hệ thống năng lượng tái tạo.",
+                about_story_2: "Với đội ngũ kỹ sư giàu kinh nghiệm và đối tác chiến lược là các thương hiệu hàng đầu thế giới, SolarPro cam kết mang lại hiệu quả đầu tư cao nhất và an toàn tuyệt đối cho khách hàng.",
+                about_values_title: "Giá trị cốt lõi",
+                val_1_title: "Chất lượng",
+                val_1_desc: "Cam kết vật tư chính hãng, thi công đúng chuẩn quốc tế.",
+                val_2_title: "Tận tâm",
+                val_2_desc: "Đồng hành cùng khách hàng suốt vòng đời dự án (25 năm).",
+                val_3_title: "Bền vững",
+                val_3_desc: "Phát triển kinh doanh đi đôi với bảo vệ môi trường."
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_projects: "Projects",
+                nav_pricing: "Pricing",
+                nav_careers: "Careers",
+                nav_contact: "Contact Us",
+                hero_title: "Comprehensive Solar Energy Installation Services",
+                hero_sub: "Save up to 90% on electricity costs and protect the environment for your business.",
+                btn_calc: "ROI Calculator",
+                btn_price: "View Pricing",
+                stat_1: "Completed Projects",
+                stat_2: "Total Installed Capacity",
+                stat_3: "Years of Experience",
+                stat_4: "Customer Satisfaction",
+                calc_title: "Cost & ROI Calculator",
+                page_projects_title: "Company Profile & Projects",
+                page_pricing_title: "Standard Installation Pricing",
+                page_careers_title: "Join The SolarPro Team",
+                contact_title: "GET A SOLAR QUOTE",
+                btn_submit: "Send Request",
+                page_about_title: "About SolarPro",
+                page_about_sub: "Building a green future with sustainable energy solutions.",
+                about_story_title: "Our Story",
+                about_story_1: "Founded in 2016, SolarPro started with the mission of bringing solar power to every Vietnamese roof. Over a decade later, we are proud to be a pioneer in consulting, designing, and installing renewable energy systems.",
+                about_story_2: "With a team of experienced engineers and strategic partnerships with world-leading brands, SolarPro is committed to delivering the highest return on investment and absolute safety for our customers.",
+                about_values_title: "Core Values",
+                val_1_title: "Quality",
+                val_1_desc: "Committed to genuine materials and international standard construction.",
+                val_2_title: "Dedication",
+                val_2_desc: "Accompanying customers throughout the project life cycle (25 years).",
+                val_3_title: "Sustainability",
+                val_3_desc: "Business development goes hand in hand with environmental protection."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+
+            const btnVi = document.getElementById('btn-vi');
+            const btnEn = document.getElementById('btn-en');
+            if(lang === 'vi') {
+                btnVi.classList.replace('text-gray-500', 'text-green-700');
+                btnVi.classList.add('font-bold');
+                btnEn.classList.replace('text-green-700', 'text-gray-500');
+                btnEn.classList.remove('font-bold');
+            } else {
+                btnEn.classList.replace('text-gray-500', 'text-green-700');
+                btnEn.classList.add('font-bold');
+                btnVi.classList.replace('text-green-700', 'text-gray-500');
+                btnVi.classList.remove('font-bold');
+            }
+        }
+
+        // 3. Xử lý Router Đa Trang (Chuyển trang mượt mà)
+        function navigate(pageId, sectionId = null) {
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.getElementById('page-' + pageId).classList.add('active');
+            document.getElementById('mobile-menu').classList.add('hidden');
+
+            if (sectionId) {
+                setTimeout(() => {
+                    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 4. Xử lý Máy Tính Dự Toán
+        const billSlider = document.getElementById('bill-slider');
+        function updateCalculator() {
+            if(!billSlider) return;
+            const bill = parseInt(billSlider.value);
+            document.getElementById('display-bill').innerText = new Intl.NumberFormat('vi-VN').format(bill) + ' VNĐ';
+
+            let capacity = bill / 300000;
+            capacity = Math.max(3, Math.round(capacity * 10) / 10);
+            let cost = capacity * 14000000;
+            let monthlySavings = bill * 0.9;
+            let paybackYears = cost / (monthlySavings * 12);
+
+            document.getElementById('result-capacity').innerText = capacity.toLocaleString('vi-VN');
+            document.getElementById('result-cost').innerText = Math.round(cost).toLocaleString('vi-VN');
+            document.getElementById('result-savings').innerText = new Intl.NumberFormat('vi-VN').format(Math.round(monthlySavings));
+            document.getElementById('result-payback').innerText = paybackYears.toFixed(1).replace('.', ',');
+        }
+        if(billSlider) {
+            billSlider.addEventListener('input', updateCalculator);
+            updateCalculator(); 
+        }
+
+        // 5. Xử lý Form Liên Hệ (Formspree)
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const actionUrl = contactForm.getAttribute('action');
+            
+            if (actionUrl.includes('MÃ_CỦA_ANH')) {
+                alert('Anh cần thay chữ "MÃ_CỦA_ANH" bằng link thực tế từ Formspree.io để nhận được email!');
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+            try {
+                const response = await fetch(actionUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    const messageBox = document.createElement('div');
+                    messageBox.className = 'fixed top-24 right-4 bg-green-600 text-white px-6 py-3 rounded-lg shadow-2xl z-[100] animate-bounce';
+                    messageBox.innerHTML = 'Cảm ơn anh! Em đã nhận được thông tin và sẽ gọi lại sớm nhất.';
+                    document.body.appendChild(messageBox);
+                    contactForm.reset();
+                    setTimeout(() => messageBox.remove(), 4000);
+                } else {
+                    alert('Có lỗi xảy ra, anh vui lòng thử lại.');
+                }
+            } catch (error) {
+                alert('Lỗi kết nối mạng, anh vui lòng kiểm tra lại.');
+            }
+        });
+
+        // 6. Xử lý Slider Trang Chủ (3 hình chạy sau 4 giây)
+        let currentHeroSlide = 0;
+        const heroSlider = document.getElementById('hero-slider');
+        if(heroSlider) {
+            setInterval(() => {
+                currentHeroSlide = (currentHeroSlide + 1) % 3;
+                heroSlider.style.transform = `translateX(-${currentHeroSlide * 100}%)`;
+            }, 4000);
+        }
+
+        // 7. Xử lý Slider Trang Dự Án (5 hình chạy sau 4 giây)
+        const projectSliderTrack = document.getElementById('projects-slider-track');
+        let currentProjectSlide = 0;
+        const totalProjectSlides = 5;
+
+        if (projectSliderTrack) {
+            setInterval(() => {
+                let itemsVisible = 1; 
+                if (window.innerWidth >= 1024) itemsVisible = 3; 
+                else if (window.innerWidth >= 768) itemsVisible = 2; 
+
+                const maxSlide = totalProjectSlides - itemsVisible;
+
+                currentProjectSlide++;
+                if (currentProjectSlide > maxSlide) {
+                    currentProjectSlide = 0; 
+                }
+
+                const translatePercentage = currentProjectSlide * (100 / itemsVisible);
+                projectSliderTrack.style.transform = `translateX(-${translatePercentage}%)`;
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
